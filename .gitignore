@@ -1,0 +1,8 @@
+node_modules
+dist
+.geocodebr_cache
+.env
+.DS_Store
+playground/node_modules
+playground/dist
+*.log

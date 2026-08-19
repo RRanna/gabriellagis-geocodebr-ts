@@ -1,0 +1,45 @@
+{
+  "name": "geocodebr-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/geocode.js",
+  "module": "dist/geocode.mjs",
+  "types": "dist/geocode.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/geocode.js",
+      "import": "./dist/geocode.mjs",
+      "types": "./dist/geocode.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/geocode.ts src/data/download.ts src/core/matching.ts src/utils/normalization.ts src/db/duckdb.ts --format cjs,esm --dts",
+    "test": "vitest run",
+    "playground": "npm run build && npm run dev --prefix playground",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "geocoding",
+    "geocoder",
+    "brasil",
+    "ibge",
+    "cnefe",
+    "duckdb",
+    "parquet"
+  ],
+  "author": "Raphael Vilela",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphaelvilela/geocodebr-ts.git"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "duckdb": "^1.4.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.0.0"
+  }
+}
